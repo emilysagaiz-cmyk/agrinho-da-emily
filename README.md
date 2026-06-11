@@ -16,7 +16,7 @@
             <nav>
                 <ul>
                     <li><a href="#home">Início</a></li>
-                    <li><a href="#sobre">Sobre o Projeto</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#comedouro">O Comedouro</a></li>
                     <li><a href="#beneficios">Benefícios</a></li>
                     <li><a href="#contato">Contato</a></li>
@@ -76,4 +76,22 @@
                 </div>
                 <div class="card">
                     <h3>Manejo Eficiente</h3>
-                    <p>Automação que diminui a necessidade de mão de obra constante para
+                    <p>Automação que diminui a necessidade de mão de obra constante para alimentação manual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container footer-container">
+            <p>&copy; 2026 Agrotec Sustentável. Desenvolvido com foco em acessibilidade e inovação.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">Documentação</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
