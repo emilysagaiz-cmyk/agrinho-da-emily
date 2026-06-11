@@ -10,8 +10,4 @@ Este é um projeto de Landing Page focado em tecnologia aplicada ao campo de for
 
 ## 📂 Estrutura do Projeto
 
-```text
-├── index.html       # Estrutura principal da página
-├── style.css        # Estilos globais, variáveis e responsividade
-├── script.js        # Lógica de animação e interatividade do menu
-└── README.md        # Documentação e instruções do projeto
+
