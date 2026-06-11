@@ -1,22 +1,55 @@
-// Aguarda o DOM (estrutura da página) carregar completamente
 document.addEventListener("DOMContentLoaded", () => {
     initMobileMenu();
     initScrollAnimation();
 });
 
-/**
- * Configura a interatividade do menu mobile (hambúrguer)
- */
 function initMobileMenu() {
     const headerContainer = document.querySelector('.header-container');
     const nav = document.querySelector('nav');
     
-    // Cria o botão dinamicamente para não poluir o HTML
     const menuToggle = document.createElement('button');
     menuToggle.classList.add('menu-toggle');
-    menuToggle.innerHTML = '&#9776;'; // Ícone de três barras (hambúrguer)
+    menuToggle.innerHTML = '&#9776;';
     menuToggle.setAttribute('aria-label', 'Abrir menu de navegação');
     
-    // Insere o botão antes do menu de navegação
     if (headerContainer && nav) {
-        header
+        headerContainer.insertBefore(menuToggle, nav);
+        
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.innerHTML = nav.classList.contains('active') ? '&times;' : '&#9776;';
+        });
+
+        const navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuToggle.innerHTML = '&#9776;';
+            });
+        });
+    }
+}
+
+function initScrollAnimation() {
+    const targetElements = document.querySelectorAll('.card, .details-text, .details-image');
+    
+    const observerOptions = {
+        root: null,
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    targetElements.forEach(element => {
+        element.classList.add('scroll-hidden');
+        observer.observe(element);
+    });
+}
