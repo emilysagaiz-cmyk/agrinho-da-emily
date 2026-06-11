@@ -1,0 +1,22 @@
+// Aguarda o DOM (estrutura da página) carregar completamente
+document.addEventListener("DOMContentLoaded", () => {
+    initMobileMenu();
+    initScrollAnimation();
+});
+
+/**
+ * Configura a interatividade do menu mobile (hambúrguer)
+ */
+function initMobileMenu() {
+    const headerContainer = document.querySelector('.header-container');
+    const nav = document.querySelector('nav');
+    
+    // Cria o botão dinamicamente para não poluir o HTML
+    const menuToggle = document.createElement('button');
+    menuToggle.classList.add('menu-toggle');
+    menuToggle.innerHTML = '&#9776;'; // Ícone de três barras (hambúrguer)
+    menuToggle.setAttribute('aria-label', 'Abrir menu de navegação');
+    
+    // Insere o botão antes do menu de navegação
+    if (headerContainer && nav) {
+        header
